@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercice_8</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form>
+            <label for="age">Votre âge : </label><input type="text" id="age" name="age"/><br/>
+            <button id="valider" name="valider">Valider</button>
+        </form>
+        <script>
+          document.getElementById('valider').addEventListener('click',function(){
+            var age = document.getElementById('age').value;  //déclaration de la variable age
+            if (isNaN(age) == false && age){ //vérification que les données saisis sont bien des nombres
+                if (parseInt(age)<'0') //vérification que l'age n'est pas inférieur à zéro
+                {
+                  alert('vous ne pouvez pas avoir un age inférieur à 0!!')
+                }
+              else if (parseInt(age)>='18') { // si plus de 18ans indiqué que la personne est majeur
+                alert('vous êtes majeur!');
+                }
+              else { // si plus de 18ans indiqué que la personne n'est pas majeur
+                alert('vous n\'etes pas majeur!');
+                }
+              }
+              else{
+                alert('Veuillez vérifier votre saisis');
+              }
+          })
+        </script>
+    </body>
+</html>
